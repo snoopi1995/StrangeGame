@@ -1,6 +1,8 @@
 #include "main.h"
 #include "AppDelegate.h"
 #include "CCEGLView.h"
+#include "time.h"
+#include "Winsock2.h"
 
 USING_NS_CC;
 

@@ -10,6 +10,7 @@ class PhysicsSprite :
 	public CCSprite
 {
 public:
+	//clock_t start;
     PhysicsSprite();
     void setPhysicsBody(b2Body * body);
 	virtual CCAffineTransform nodeToParentTransform(void);
@@ -27,10 +28,23 @@ class FirstLayer :
 	bool isGravityDown;
 	unsigned int wavNum;
 public:
+	//struct cc_timeval t_begin;
+	//struct cc_timeval t_now;
+	//int t_now;
+	int timecount;
+	int givecount;
 	FirstLayer();
 	~FirstLayer();
 	void update(float dt);
+	void updateGame(float dt);
 	void setTitle(int count);
+	void setParticleSys();
+	void setGroundCeiling();
+	void setLife();
+    //void popupLayer();
+
+	//callback
+	void learnCallback(CCObject * pSender);
 	//touch event
 	virtual void registerWithTouchDispatcher(void);
 	virtual bool ccTouchBegan(CCTouch * touch,CCEvent * pEvent);
@@ -44,7 +58,7 @@ class MyContactListener :
 {
 public:
   void BeginContact(b2Contact* contact)
-  { /* handle begin event */ }
+  {  }
 
   void EndContact(b2Contact* contact)
   { /* handle end event */ }
